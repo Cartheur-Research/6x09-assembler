@@ -93,18 +93,16 @@ USAGE
 
        Additional optional output files are:
 
-       A listing file is an annotated copy of the source file with addresses
+       * A listing file is an annotated copy of the source file with addresses
          and generated code prepended to each line.
 
-       An exports file contains a list of all macro definitions and  symbols
+       * An exports file contains a list of all macro definitions and  symbols
          flagged  for export with the EXPORT pseudo-op. Suitable for inclusion
          in subsequent source files.
 
-       A symbols file contains a list of all non-local symbols. Suitable for
+       * A symbols file contains a list of all non-local symbols. Suitable for
          inclusion in subsequent source files, but beware multiple definitions
          errors if two source files include a common set of symbols.
-
-       Home page: <https://www.6809.org.uk/asm6809/>
 
    Differences to other assemblers
        Motorola syntax allows a comment to follow any operands, separated from
@@ -186,8 +184,10 @@ USAGE
        An octal number preceded by @ or with a leading 0.
        A binary number preceded by % or 0b.
        A hexadecimal number preceded by $ or 0x.
-       A floating point number: decimal digits surrounding exactly one full stop (.).
-       A  single  quote  followed by any ASCII character (yielding the ASCII value of that character).
+       A floating point number: decimal digits surrounding exactly one  full 
+         stop (.).
+       A  single  quote  followed by any ASCII character (yielding the ASCII
+         value of that character).
 
        A symbol name, local forward reference or local back reference.
 
@@ -195,7 +195,8 @@ USAGE
 
        A string delimited either by double quotes or /.
 
-       A combination of any of the above with arithmetic, bitwise, logical or relational operators.
+       A combination of any of the above with arithmetic,  bitwise,  logical
+         or relational operators.
        
        Parenthesis to specify precedence.
 
