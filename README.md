@@ -1,6 +1,6 @@
 ## 6x09-assembler
 
-Another assembler for 6x09, this one not Motorola.
+A cross-assembler for 6x09, this one not Motorola.
 
 This code repository has not *yet* been organized, so is rather random. Explore with caution.
 
@@ -160,42 +160,47 @@ USAGE
        arguments to a pseudo-op or macro. Permitted arguments are specific  to
        the instruction or pseudo-op, but in general they may be:
 
-       An expression.
+       * An expression.
 
-       A register name, with optional pre-decrement or post-increment.
+       * A register name, with optional pre-decrement or post-increment.
 
-       A  nested  list surrounded by [ and ]. This is generally only used to
+       * A  nested  list surrounded by [ and ]. This is generally only used to
          indicate indirect indexed addressing.
 
        In addition, any argument may be preceded by:
 
-       #, indicate immediate value.
+       * #, indicate immediate value.
 
-       <<, force 5-bit index offset.
+       * <<, force 5-bit index offset.
 
-       <, force direct addressing, 8-bit value or 8-bit index offset.
+       * <, force direct addressing, 8-bit value or 8-bit index offset.
 
-       >, force extended addressing, 16-bit value or 16-bit index offset.
+       * >, force extended addressing, 16-bit value or 16-bit index offset.
 
    Expressions
        Expressions are formed of:
 
-       A decimal number.
-       An octal number preceded by @ or with a leading 0.
-       A binary number preceded by % or 0b.
-       A hexadecimal number preceded by $ or 0x.
-       A floating point number: decimal digits surrounding exactly one  full 
+       * A decimal number.
+
+       * An octal number preceded by @ or with a leading 0.
+
+       * A binary number preceded by % or 0b.
+
+       * A hexadecimal number preceded by $ or 0x.
+
+       * A floating point number: decimal digits surrounding exactly one  full 
          stop (.).
-       A  single  quote  followed by any ASCII character (yielding the ASCII
+
+       * A  single  quote  followed by any ASCII character (yielding the ASCII
          value of that character).
 
-       A symbol name, local forward reference or local back reference.
+       * A symbol name, local forward reference or local back reference.
 
-       Any of the above prefixed with a unary minus (-) or plus (+).
+       * Any of the above prefixed with a unary minus (-) or plus (+).
 
-       A string delimited either by double quotes or /.
+       * A string delimited either by double quotes or /.
 
-       A combination of any of the above with arithmetic,  bitwise,  logical
+       * A combination of any of the above with arithmetic,  bitwise,  logical
          or relational operators.
        
        Parenthesis to specify precedence.
