@@ -93,14 +93,14 @@ USAGE
 
        Additional optional output files are:
 
-       o A listing file is an annotated copy of the source file with addresses
+       A listing file is an annotated copy of the source file with addresses
          and generated code prepended to each line.
 
-       o An exports file contains a list of all macro definitions and  symbols
+       An exports file contains a list of all macro definitions and  symbols
          flagged  for export with the EXPORT pseudo-op. Suitable for inclusion
          in subsequent source files.
 
-       o A symbols file contains a list of all non-local symbols. Suitable for
+       A symbols file contains a list of all non-local symbols. Suitable for
          inclusion in subsequent source files, but beware multiple definitions
          errors if two source files include a common set of symbols.
 
@@ -162,50 +162,42 @@ USAGE
        arguments to a pseudo-op or macro. Permitted arguments are specific  to
        the instruction or pseudo-op, but in general they may be:
 
-       o An expression.
+       An expression.
 
-       o A register name, with optional pre-decrement or post-increment.
+       A register name, with optional pre-decrement or post-increment.
 
-       o A  nested  list surrounded by [ and ]. This is generally only used to
+       A  nested  list surrounded by [ and ]. This is generally only used to
          indicate indirect indexed addressing.
 
        In addition, any argument may be preceded by:
 
-       o #, indicate immediate value.
+       #, indicate immediate value.
 
-       o <<, force 5-bit index offset.
+       <<, force 5-bit index offset.
 
-       o <, force direct addressing, 8-bit value or 8-bit index offset.
+       <, force direct addressing, 8-bit value or 8-bit index offset.
 
-       o >, force extended addressing, 16-bit value or 16-bit index offset.
+       >, force extended addressing, 16-bit value or 16-bit index offset.
 
    Expressions
        Expressions are formed of:
 
-       o A decimal number.
+       A decimal number.
+       An octal number preceded by @ or with a leading 0.
+       A binary number preceded by % or 0b.
+       A hexadecimal number preceded by $ or 0x.
+       A floating point number: decimal digits surrounding exactly one full stop (.).
+       A  single  quote  followed by any ASCII character (yielding the ASCII value of that character).
 
-       o An octal number preceded by @ or with a leading 0.
+       A symbol name, local forward reference or local back reference.
 
-       o A binary number preceded by % or 0b.
+       Any of the above prefixed with a unary minus (-) or plus (+).
 
-       o A hexadecimal number preceded by $ or 0x.
+       A string delimited either by double quotes or /.
 
-       o A floating point number: decimal digits surrounding exactly one  full
-         stop (.).
-
-       o A  single  quote  followed by any ASCII character (yielding the ASCII
-         value of that character).
-
-       o A symbol name, local forward reference or local back reference.
-
-       o Any of the above prefixed with a unary minus (-) or plus (+).
-
-       o A string delimited either by double quotes or /.
-
-       o A combination of any of the above with arithmetic,  bitwise,  logical
-         or relational operators.
-
-       o Parenthesis to specify precedence.
+       A combination of any of the above with arithmetic, bitwise, logical or relational operators.
+       
+       Parenthesis to specify precedence.
 
        The  assembler  uses  multiple passes to resolve expressions. If an ex-
        pression refers to a symbol that cannot currently be resolved, an extra
